@@ -1,6 +1,6 @@
 # Takım ve Ürün Adı
 
-A new Flutter project.
+Flutter47 - Görev Yönetimi ve Hatırlatıcı
 
 ## Getting Started
 
