@@ -2,7 +2,7 @@
 
 Flutter47 - Görev Yönetimi ve Hatırlatıcı
 
-## Getting Started
+## Takım ve Ürün Hakkında Bilgiler
 
 This project is a starting point for a Flutter application.
 
