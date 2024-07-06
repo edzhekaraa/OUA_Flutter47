@@ -4,7 +4,8 @@ Flutter47 - Görev Yönetimi ve Hatırlatıcı
 
 ## Takım ve Ürün Hakkında Bilgiler
 
-1
+**Takım Üyeleri**
+
 
 This project is a starting point for a Flutter application.
 
