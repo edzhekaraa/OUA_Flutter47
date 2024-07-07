@@ -1,5 +1,6 @@
 # Takım ve Ürün Adı
 ![happytime](bootcampFiles/general/headers/happytimeLogo.png)
+
 Flutter47 - Happy Time
 
 ## Takım ve Ürün Hakkında Bilgiler
@@ -97,19 +98,19 @@ samples, guidance on mobile development, and a full API reference.
 
   <details>
     <summary><h3>Sprint 1 - Sprint Board Update Screenshots</h3></summary>
-    <img src="bootcampFiles/sprintOne/boardupdate/1.png" style="max-width: 100%; height: auto;">
-    <img src="bootcampFiles/sprintOne/boardupdate/2.png" style="max-width: 100%; height: auto;">
+    <img src="bootcampFiles/sprintOne/boardupdate/1.jpeg" style="max-width: 100%; height: auto;">
+    <img src="bootcampFiles/sprintOne/boardupdate/2.jpeg" style="max-width: 100%; height: auto;">
   </details>
 
   <details>
     <summary><h3>Sprint 1 - Proje Takip Aracı</h3></summary>
-    <img src="bootcampFiles/sprintOne/burndown/1.png" style="max-width: 100%; height: auto;">
-    <img src="bootcampFiles/sprintOne/burndown/2.png" style="max-width: 100%; height: auto;">
-    <img src="bootcampFiles/sprintOne/burndown/3.png" style="max-width: 100%; height: auto;">
-    <img src="bootcampFiles/sprintOne/burndown/4.png" style="max-width: 100%; height: auto;">
-    <img src="bootcampFiles/sprintOne/burndown/5.png" style="max-width: 100%; height: auto;">
-    <img src="bootcampFiles/sprintOne/burndown/6.png" style="max-width: 100%; height: auto;">
-    <img src="bootcampFiles/sprintOne/burndown/7.png" style="max-width: 100%; height: auto;">
+    <img src="bootcampFiles/sprintOne/proje_takip/1.png" style="max-width: 100%; height: auto;">
+    <img src="bootcampFiles/sprintOne/proje_takip/2.png" style="max-width: 100%; height: auto;">
+    <img src="bootcampFiles/sprintOne/proje_takip/3.png" style="max-width: 100%; height: auto;">
+    <img src="bootcampFiles/sprintOne/proje_takip/4.png" style="max-width: 100%; height: auto;">
+    <img src="bootcampFiles/sprintOne/proje_takip/5.png" style="max-width: 100%; height: auto;">
+    <img src="bootcampFiles/sprintOne/proje_takip/6.png" style="max-width: 100%; height: auto;">
+    <img src="bootcampFiles/sprintOne/proje_takip/7.png" style="max-width: 100%; height: auto;">
   </details>
 
 
