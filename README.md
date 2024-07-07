@@ -1,6 +1,6 @@
 # Takım ve Ürün Adı
 
-Flutter47 - Görev Yönetimi ve Hatırlatıcı
+Flutter47 - Happy Time
 
 ## Takım ve Ürün Hakkında Bilgiler
 
