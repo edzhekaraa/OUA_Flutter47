@@ -6,6 +6,12 @@ Flutter47 - Görev Yönetimi ve Hatırlatıcı
 
 **Takım Üyeleri**
 
+**Ürün Açıklaması**
+
+**Ürün Özellikleri**
+
+**Hedef Kitle**
+
 
 This project is a starting point for a Flutter application.
 
