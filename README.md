@@ -6,11 +6,11 @@ Flutter47 - Görev Yönetimi ve Hatırlatıcı
 
 **Takım Üyeleri**
 
-Beyza Yaylak
-Ece Kara
-Berkay Pekersoy
-Beyzanur Kuzhan
-Bora Baştür
+Beyza Yaylak * Scrum Master
+Ece Kara * Product Owner
+Berkay Pekersoy * Developer
+Beyzanur Kuzhan * Developer
+Bora Baştür * Developer
 
 ## Ürün Açıklaması
 
