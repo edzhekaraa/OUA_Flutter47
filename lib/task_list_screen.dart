@@ -10,7 +10,11 @@ class TaskListScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Görev Yönetimi'),
+        backgroundColor: Color(0xFF08457E),
+        title: Text(
+          'Görev Yönetimi',
+          style: TextStyle(color: Colors.white),
+        ),
         actions: [
           IconButton(
             icon: Icon(Icons.logout),
@@ -19,6 +23,53 @@ class TaskListScreen extends StatelessWidget {
             },
           ),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Text(
+                'Menü',
+                style: TextStyle(color: Colors.white, fontSize: 24),
+              ),
+            ),
+            ListTile(
+              title: Text('Günlük Görevler'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('Haftalık Görevler'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('Aylık Görevler'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            Divider(),
+            ListTile(
+              title: Text('Profil Düzenle'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('Ayarlar'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
       ),
       body: ListView.builder(
         itemCount: taskProvider.tasks.length,
@@ -77,14 +128,32 @@ class AddTaskScreen extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                final newTask = Task(
-                  id: DateTime.now().millisecondsSinceEpoch,
-                  title: _titleController.text,
-                  description: _descriptionController.text,
-                  dateTime: DateTime.now(),
-                );
-                taskProvider.addTask(newTask);
-                Navigator.pop(context);
+                if (_titleController.text.isNotEmpty && _descriptionController.text.isNotEmpty) {
+                  final newTask = Task(
+                    id: DateTime.now().millisecondsSinceEpoch,
+                    title: _titleController.text,
+                    description: _descriptionController.text,
+                    dateTime: DateTime.now(),
+                  );
+                  taskProvider.addTask(newTask);
+                  Navigator.pop(context);
+                } else {
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Text('Hata'),
+                      content: Text('Lütfen görev başlığını ve açıklamasını giriniz.'),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Text('Tamam'),
+                        ),
+                      ],
+                    ),
+                  );
+                }
               },
               child: Text('Görev Ekle'),
             ),

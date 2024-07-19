@@ -19,6 +19,7 @@ class LoginScreen extends StatelessWidget {
             TextField(
               controller: _emailController,
               decoration: InputDecoration(labelText: 'Email'),
+              keyboardType: TextInputType.emailAddress,
             ),
             TextField(
               controller: _passwordController,
@@ -27,9 +28,29 @@ class LoginScreen extends StatelessWidget {
             ),
             SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () {
+              onPressed: () async {
                 // Giriş yapma işlemi burada gerçekleştirilecek.
-                Navigator.pushReplacementNamed(context, '/taskList');
+                if (_emailController.text.isNotEmpty && _passwordController.text.isNotEmpty) {
+                  // Giriş işlemi başarılı olduğunda yönlendirme
+                  Navigator.pushReplacementNamed(context, '/taskList');
+                } else {
+                  // Hata durumu
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Text('Hata'),
+                      content: Text('Lütfen email ve şifrenizi giriniz.'),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Text('Tamam'),
+                        ),
+                      ],
+                    ),
+                  );
+                }
               },
               child: Text('Giriş Yap'),
             ),

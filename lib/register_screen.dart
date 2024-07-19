@@ -19,6 +19,7 @@ class RegisterScreen extends StatelessWidget {
             TextField(
               controller: _emailController,
               decoration: InputDecoration(labelText: 'Email'),
+              keyboardType: TextInputType.emailAddress,
             ),
             TextField(
               controller: _passwordController,
@@ -32,9 +33,29 @@ class RegisterScreen extends StatelessWidget {
             ),
             SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () {
-                // Kayıt olma işlemi burada gerçekleştirilecek.
-                Navigator.pop(context);
+              onPressed: () async {
+                if (_passwordController.text == _confirmPasswordController.text &&
+                    _emailController.text.isNotEmpty) {
+                  // Kayıt olma işlemi burada gerçekleştirilecek.
+                  Navigator.pop(context);
+                } else {
+                  // Hata durumu
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Text('Hata'),
+                      content: Text('Lütfen bilgilerinizi doğru giriniz.'),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Text('Tamam'),
+                        ),
+                      ],
+                    ),
+                  );
+                }
               },
               child: Text('Kayıt Ol'),
             ),
