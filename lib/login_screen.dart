@@ -1,69 +1,70 @@
 import 'package:flutter/material.dart';
-import 'register_screen.dart';
 
 class LoginScreen extends StatelessWidget {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Giriş Yap'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextField(
-              controller: _emailController,
-              decoration: InputDecoration(labelText: 'Email'),
-              keyboardType: TextInputType.emailAddress,
-            ),
-            TextField(
-              controller: _passwordController,
-              decoration: InputDecoration(labelText: 'Şifre'),
-              obscureText: true,
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () async {
-                // Giriş yapma işlemi burada gerçekleştirilecek.
-                if (_emailController.text.isNotEmpty && _passwordController.text.isNotEmpty) {
-                  // Giriş işlemi başarılı olduğunda yönlendirme
-                  Navigator.pushReplacementNamed(context, '/taskList');
-                } else {
-                  // Hata durumu
-                  showDialog(
-                    context: context,
-                    builder: (context) => AlertDialog(
-                      title: Text('Hata'),
-                      content: Text('Lütfen email ve şifrenizi giriniz.'),
-                      actions: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                          child: Text('Tamam'),
+      backgroundColor: Color(0xFF7f39fb), // Arka plan rengi
+      body: SafeArea(
+        child: Center(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  // Orta üst kısımda logo
+                  Image.asset(
+                    'assets/loadingscreen.png', // Logo dosya yolu
+                    height: 360, // Logo yüksekliği
+                    fit: BoxFit.contain, // Logo bozulmadan fit etme
+                  ),
+                  SizedBox(height: 40), // Logo ile butonlar arasındaki boşluk
+
+                  // Giriş Yap butonu
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white, // Beyaz arka plan
+                        foregroundColor: Colors.purple, // Mor yazı rengi
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12), // Yumuşak köşeler
                         ),
-                      ],
+                        padding: EdgeInsets.symmetric(vertical: 15), // Buton yüksekliği
+                        minimumSize: Size(double.infinity, 50), // Buton genişliği
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pushReplacementNamed('/emailLogin'); // Email login ekranına yönlendir
+                      },
+                      child: Text('Giriş Yap', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                     ),
-                  );
-                }
-              },
-              child: Text('Giriş Yap'),
+                  ),
+                  
+                  // Kayıt Ol butonu
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white, // Beyaz arka plan
+                        foregroundColor: Colors.purple, // Mor yazı rengi
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12), // Yumuşak köşeler
+                        ),
+                        padding: EdgeInsets.symmetric(vertical: 15), // Buton yüksekliği
+                        minimumSize: Size(double.infinity, 50), // Buton genişliği
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/register'); // Kayıt ol ekranına yönlendir
+                      },
+                      child: Text('Kayıt Ol', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                    ),
+                  ),
+                ],
+              ),
             ),
-            TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => RegisterScreen()),
-                );
-              },
-              child: Text('Hesabınız yok mu? Kayıt Olun'),
-            ),
-          ],
+          ),
         ),
       ),
     );
