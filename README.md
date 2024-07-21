@@ -1,5 +1,5 @@
 # Takım ve Ürün Adı
-![happytime](bootcampFiles/general/headers/happytimeLogoNew.png)
+![happytime](bootcampFiles/general/headers/happytimeLogo.png)
 
 Flutter47 - Happy Time
 
