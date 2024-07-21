@@ -197,7 +197,7 @@ Arayüz tasarımında Beyza ve Ece’nin hazırlayıp geliştirici arkadaşlara 
     <img src="bootcampFiles/sprintTwo/strollSchema/1.png" style="max-width: 100%; height: auto;">
     <video autoplay loop muted width="500" height="300" src="bootcampFiles/sprintTwo/screenshots/SampleUsage.gif">
     </video>
-    <img src="bootcampFiles/sprintTwo/screenshots/SampleUsage.gif" style="max-width: 100%; height: auto;">
+    
   </details>
 
   <details>
