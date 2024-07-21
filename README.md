@@ -192,12 +192,6 @@ Arayüz tasarımında Beyza ve Ece’nin hazırlayıp geliştirici arkadaşlara 
     
   </details>   
 
-<details>
-    <summary><h3>Uygulama Gezinti Şeması ve Örnek Kullanım</h3></summary>
-    <img src="bootcampFiles/sprintTwo/strollSchema/1.png" style="max-width: 100%; height: auto;">
-    <img src="bootcampFiles/sprintTwo/screenshots/SampleUsage.gif" style="width: 50%; height: 50%;">
-  </details>
-
   <details>
     <summary><h3>Sprint 2 - Sprint Board Update Screenshots</h3></summary>
     <img src="bootcampFiles/sprintTwo/boardupdate/ss1.jpeg" style="max-width: 100%; height: auto;">
@@ -240,5 +234,11 @@ Uygulama nasıl kullanılır kısmı üçüncü sprintte yapılması planlandı.
 AI butonu üçüncü sprintte yapılması planlandı.
 Tamamlanan Görevler kısmı üçüncü spritte yapılması planlandı.
 Notlar kısmı üçüncü sprinte ertelendi."
+
+<details>
+    <summary><h3>Uygulama Gezinti Şeması ve Örnek Kullanım</h3></summary>
+    <img src="bootcampFiles/sprintTwo/strollSchema/1.png" style="max-width: 100%; height: auto;">
+    <img src="bootcampFiles/sprintTwo/screenshots/SampleUsage.gif" style="width: 50%; height: 50%;">
+  </details>
 
 </details>
