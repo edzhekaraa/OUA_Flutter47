@@ -195,9 +195,7 @@ Arayüz tasarımında Beyza ve Ece’nin hazırlayıp geliştirici arkadaşlara 
 <details>
     <summary><h3>Uygulama Gezinti Şeması ve Örnek Kullanım</h3></summary>
     <img src="bootcampFiles/sprintTwo/strollSchema/1.png" style="max-width: 100%; height: auto;">
-    <video autoplay loop muted width="500" height="300" src="bootcampFiles/sprintTwo/screenshots/App.mp4">
-    </video>
-    
+    <img src="bootcampFiles/sprintTwo/screenshots/SampleUsage.gif" style="width: 50%; height: 50%;">
   </details>
 
   <details>
