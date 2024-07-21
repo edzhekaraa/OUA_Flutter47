@@ -69,7 +69,7 @@ samples, guidance on mobile development, and a full API reference.
     <summary><h1>Sprint 1</h1></summary>
 
 
-<details>
+
 
 <details>
     <summary><h3>Sprint 1 - App Screenshots</h3></summary>
@@ -149,24 +149,14 @@ Arayüz tasarımında Beyza ve Ece’nin hazırlayıp geliştirici arkadaşlara 
 "
 
 
-  - **Other Notes**:
-  <details>
-    <summary><h3>Additional Files</h3></summary>
-    <ul>
-      <li><strong>Project Scope And Goals:</strong> <a href="./bootcampFiles/sprintOne/projectscopeandgoals.pdf">See file</a></li>
-      <li><strong>Target Audience:</strong> <a href="./bootcampFiles/sprintOne/targetaudience.pdf">See file</a></li>
-      <li><strong>Conversations:</strong> See file</li>
-    </ul>
-  </details>
+  
 
   </details>
-
-
-  <details>
-    <summary><h1>Sprint 2</h1></summary>
 
 
 <details>
+    <summary><h1>Sprint 2</h1></summary>
+
 
 <details>
     <summary><h3>Sprint 2 - App Screenshots</h3></summary>
@@ -196,15 +186,19 @@ Arayüz tasarımında Beyza ve Ece’nin hazırlayıp geliştirici arkadaşlara 
     <tr>
       <td style="width: 25%;"><img src="bootcampFiles/sprintTwo/screenshots/5.png" style="max-width: 100%; height: auto;"></td>
     </tr>
-     <tr>
-      <td colspan="4" style="text-align: center;"><h2>Örnek Kullanım</h2></td>
-    </tr>
-    <tr>
-      <td style="width: 25%;"><img src="bootcampFiles/sprintTwo/screenshots/SampleUsage.gif" style="max-width: 100%; height: auto;"></td>
-    </tr>
+    
   </table>
+
+    
   </details>   
 
+<details>
+    <summary><h3>Uygulama Gezinti Şeması ve Örnek Kullanım</h3></summary>
+    <img src="bootcampFiles/sprintTwo/strollSchema/1.png" style="max-width: 100%; height: auto;">
+    <video autoplay loop muted width="500" height="300" src="bootcampFiles/sprintTwo/screenshots/SampleUsage.gif">
+    </video>
+    <img src="bootcampFiles/sprintTwo/screenshots/SampleUsage.gif" style="max-width: 100%; height: auto;">
+  </details>
 
   <details>
     <summary><h3>Sprint 2 - Sprint Board Update Screenshots</h3></summary>
@@ -218,6 +212,7 @@ Arayüz tasarımında Beyza ve Ece’nin hazırlayıp geliştirici arkadaşlara 
     <img src="bootcampFiles/sprintTwo/proje_takip/2.png" style="max-width: 100%; height: auto;">
     <img src="bootcampFiles/sprintTwo/proje_takip/3.png" style="max-width: 100%; height: auto;">
   </details>
+  
 
 
   - **Sprint Notes**:
@@ -248,13 +243,4 @@ AI butonu üçüncü sprintte yapılması planlandı.
 Tamamlanan Görevler kısmı üçüncü spritte yapılması planlandı.
 Notlar kısmı üçüncü sprinte ertelendi."
 
-
-  - **Other Notes**:
-  <details>
-    <summary><h3>Additional Files</h3></summary>
-    <ul>
-      
-    </ul>
-  </details>
-
-  </details>
+</details>
