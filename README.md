@@ -16,7 +16,7 @@ Beyza Yaylak * Scrum Master
 Ece Kara * Product Owner
 Berkay Pekersoy * Developer
 Beyzanur Kuzhan * Developer
-Bora Baştür * Developer
+Bora Baştürk * Developer
 
 ## Ürün Açıklaması
 
@@ -156,6 +156,104 @@ Arayüz tasarımında Beyza ve Ece’nin hazırlayıp geliştirici arkadaşlara 
       <li><strong>Project Scope And Goals:</strong> <a href="./bootcampFiles/sprintOne/projectscopeandgoals.pdf">See file</a></li>
       <li><strong>Target Audience:</strong> <a href="./bootcampFiles/sprintOne/targetaudience.pdf">See file</a></li>
       <li><strong>Conversations:</strong> See file</li>
+    </ul>
+  </details>
+
+  </details>
+
+
+  <details>
+    <summary><h1>Sprint 2</h1></summary>
+
+
+<details>
+
+<details>
+    <summary><h3>Sprint 2 - App Screenshots</h3></summary>
+  <table style="width: 100%;">
+    <tr>
+      <td colspan="4" style="text-align: center;"><h2>Ana Ekran</h2></td>
+    </tr>
+    <tr>
+      <td style="width: 25%;"><img src="bootcampFiles/sprintTwo/screenshots/1.png" style="max-width: 100%; height: auto;"></td>
+    </tr>
+    <tr>
+      <td colspan="4" style="text-align: center;"><h2>Görev Ekleme ve Görevler Sayfası</h2></td>
+    </tr>
+    <tr>
+      <td style="width: 25%;"><img src="bootcampFiles/sprintTwo/screenshots/2.png" style="max-width: 100%; height: auto;"></td>
+      <td style="width: 25%;"><img src="bootcampFiles/sprintTwo/screenshots/3.png" style="max-width: 100%; height: auto;"></td>
+    </tr>
+      <tr>
+      <td colspan="4" style="text-align: center;"><h2>Hatırlatıcı</h2></td>
+    </tr>
+    <tr>
+      <td style="width: 25%;"><img src="bootcampFiles/sprintTwo/screenshots/4.png" style="max-width: 100%; height: auto;"></td>
+    </tr>
+      <tr>
+      <td colspan="4" style="text-align: center;"><h2>Takvim</h2></td>
+    </tr>
+    <tr>
+      <td style="width: 25%;"><img src="bootcampFiles/sprintTwo/screenshots/5.png" style="max-width: 100%; height: auto;"></td>
+    </tr>
+     <tr>
+      <td colspan="4" style="text-align: center;"><h2>Örnek Kullanım</h2></td>
+    </tr>
+    <tr>
+      <td style="width: 25%;"><img src="bootcampFiles/sprintTwo/screenshots/SampleUsage.gif" style="max-width: 100%; height: auto;"></td>
+    </tr>
+  </table>
+  </details>   
+
+
+  <details>
+    <summary><h3>Sprint 2 - Sprint Board Update Screenshots</h3></summary>
+    <img src="bootcampFiles/sprintTwo/boardupdate/ss1.jpeg" style="max-width: 100%; height: auto;">
+    <img src="bootcampFiles/sprintTwo/boardupdate/ss2.jpeg" style="max-width: 100%; height: auto;">
+      <img src="bootcampFiles/sprintTwo/boardupdate/ss3.jpeg" style="max-width: 100%; height: auto;">
+  </details>
+
+  <details>
+    <summary><h3>Sprint 2 - Proje Takip Aracı</h3></summary>
+    <img src="bootcampFiles/sprintTwo/proje_takip/2.png" style="max-width: 100%; height: auto;">
+    <img src="bootcampFiles/sprintTwo/proje_takip/3.png" style="max-width: 100%; height: auto;">
+  </details>
+
+
+  - **Sprint Notes**:
+    "İkinci spritte uygulamanın tasarım ve kod kısmına yoğunlaşıldı. Sayfa tasarımlarında ve butonların tasarımları uygulamay eklendi.
+Uygulama tasarım olarak değişti. Canva kullanmaktan ekip olarak vazgeçtik. Figma kullanmaya karar verdik. Figmadaki tasarım eklendi.
+Uygulamanın logosu da değiştirildi. Uygulama ismi Happy Time olarak belirlenmişti. Buna uygun farklı bir logo geliştirildi.
+Kullanıcı hedef kitlemize uygun bir tasarım tercih edildi.
+Uygulamanın telefonlar üzerindeki testleri yapılmaya başlandı.
+Clean code için açıklamaları ile birlikte kodlama yapıldı.
+Uygulamanın planlanmış olan sayfaları oluşturuldu.
+Front-end kısmının %60'lık bölümü tamamlandı.
+Back-end kısmının %30'luk bölümü tamamlandı."
+
+  - **Sprint içinde beklenen puan tamamlama**: İkinci Sprint için 200 puan beklenmektedir. Ekip üyeleri yine başarılı bir şekilde çalıştı. Ekip uyumlu bir şekilde çalıştı.
+  - **Puan Tamamlama Mantığı**: `(200 points completed)` Kod yazma, tasarım, ekip uyumu, ekip içi aktiflik, belirlenen hedefleri tamamlama yüzdesine göre puan değerlendirlmesi yapılmıştır.
+  - **Daily Scrum**: "Herkese uygun ortak bir zaman ayarlanamadığı için proje takibi google sheetten ve grup sohbetlerinden iletişime devam edildi.  Logo ve renkler ilk sprintte belirlendiği şekliyle kullanılmaya devam edilecek.          App Navigation Schema Ece Kara öncülüğünde oluşturularak eklemeler yapıldı.                                                     Ekip içerisinde koordineli ve etkin iletişim sağlandı.
+Bora yaptığımız çalışmaların githup repoya aktarılması konusunda Beyzanur Kuzhan, Beyza Yaylak ve Berkay'a destek oldu."
+  - **Product Backlog URL:** 
+  - **Sprint Review:**
+    "Ürün değerlendirme sürecinde; Tasarım için Ece Kara ve Beyza Yaylak çalışmaya devam ettiler. Proje ilerlemesinde beklenti karşılandı. Tasarım ve kod kısmı sorunsuz ilerledi.Kod kısmında herkesin kontrolünde Berkay Pekersoy ' un öncülüğünde ilerletildi. Beyzanur Kuzhan'da ona destek oldu.
+En sonunda ekip yazılım ekibinin yaptığını inceledi."
+
+  - **Sprint Review Participants:** Beyza Yaylak, Ece Kara, Berkay Pekersoy, Bora Baştürk, Beyzanur Kuzhan 
+  - **Sprint Retrospective:**
+    "Kalan kısımların üçüncü sprint'de tamamlanması kararlaştırıldı.
+Uygulama nasıl kullanılır kısmı üçüncü sprintte yapılması planlandı.
+AI butonu üçüncü sprintte yapılması planlandı.
+Tamamlanan Görevler kısmı üçüncü spritte yapılması planlandı.
+Notlar kısmı üçüncü sprinte ertelendi."
+
+
+  - **Other Notes**:
+  <details>
+    <summary><h3>Additional Files</h3></summary>
+    <ul>
+      
     </ul>
   </details>
 
