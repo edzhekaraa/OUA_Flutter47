@@ -3,10 +3,6 @@
 
 Flutter47 - Happy Time
 
-## Video Tanıtımı
-
-[![Videoyu İzle]]([https://www.youtube.com/watch?v=dQw4w9WgXcQ](https://drive.google.com/file/d/1OAgdeU8n3GXSREiHFPWkimPp7VVcwmS0/view?usp=drive_link))
-
 
 ## Takım ve Ürün Hakkında Bilgiler
 
