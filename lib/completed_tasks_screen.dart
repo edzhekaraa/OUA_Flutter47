@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
 class CompletedTasksScreen extends StatelessWidget {
+  const CompletedTasksScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
+    // Eğer görevleri geçici olarak saklamak istiyorsanız, Provider gibi bir state yönetim çözümü kullanabilirsiniz.
+    final List<Map<String, dynamic>> completedTasks = ModalRoute.of(context)!.settings.arguments as List<Map<String, dynamic>>? ?? [];
+
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -36,12 +41,41 @@ class CompletedTasksScreen extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 20),
-          // Görevler içeriği
-          Center(
-            child: Text(
-              'Burada tamamlanan görevler listelenecek.',
-              style: TextStyle(fontSize: 18),
+          const SizedBox(height: 20),
+          Expanded(
+            child: ListView.builder(
+              padding: const EdgeInsets.all(20),
+              itemCount: completedTasks.length,
+              itemBuilder: (context, index) {
+                final task = completedTasks[index];
+                return Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.green[200], // Tamamlanan görev için yeşil kutu
+                      borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.1),
+                          spreadRadius: 2,
+                          blurRadius: 4,
+                          offset: const Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: ListTile(
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 16),
+                      title: Text(
+                        task['title'],
+                        style: const TextStyle(
+                          color: Colors.green,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },
             ),
           ),
         ],

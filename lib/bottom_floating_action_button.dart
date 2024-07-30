@@ -5,7 +5,7 @@ class BottomFloatingActionButton extends StatelessWidget {
   final String iconPath;
   final String backgroundPath;
 
-  BottomFloatingActionButton({
+  const BottomFloatingActionButton({super.key, 
     required this.onPressed,
     required this.iconPath,
     required this.backgroundPath,
@@ -29,11 +29,11 @@ class BottomFloatingActionButton extends StatelessWidget {
             ),
             child: Center(
               child: FloatingActionButton(
-                onPressed: onPressed,
-                child: Image.asset(iconPath), // Floating button simgesi
+                onPressed: onPressed, // Floating button simgesi
                 backgroundColor: Colors.transparent, // Şeffaf arka plan
                 elevation: 0, // Gölgeyi kaldırır
-                highlightElevation: 0, // Tıklama anında oluşan gölgeyi kaldırır
+                highlightElevation: 0,
+                child: Image.asset(iconPath), // Tıklama anında oluşan gölgeyi kaldırır
               ),
             ),
           ),

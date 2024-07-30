@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'task_provider.dart';
 import 'task_list_screen.dart'; // Görevlerim sayfası
 import 'profile_screen.dart'; // Profil sayfası
-import 'add_task_screen.dart'; // Görev ekleme sayfası
 import 'main_screen.dart'; // Ana sayfa
 import 'reminder_screen.dart'; // Hatırlatıcı sayfası
 import 'completed_tasks_screen.dart'; // Tamamlanan görevler sayfası
@@ -12,6 +11,7 @@ import 'login_screen.dart'; // Giriş ekranı sayfası
 import 'email_login_screen.dart'; // E-posta ile giriş ekranı
 import 'register_screen.dart'; // Kayıt ekranı
 import 'splash_screen.dart'; // Splash ekranı
+import 'add_task_screen.dart'; // Görev ekleme sayfası
 
 void main() {
   runApp(
@@ -40,18 +40,18 @@ void main() {
             ),
           ),
         ),
-        home: SplashScreen(), // Splash ekranını burada tanımlıyoruz
+        home: const SplashScreen(), // Splash ekranını burada tanımlıyoruz
         routes: {
-          '/taskList': (context) => TaskListScreen(),
-          '/profile': (context) => ProfileScreen(),
-          '/addTask': (context) => AddTaskScreen(),
-          '/main': (context) => MainScreen(), // Ana sayfa için rota
-          '/reminder': (context) => ReminderScreen(), // Hatırlatıcı sayfası
-          '/completedTasks': (context) => CompletedTasksScreen(), // Tamamlanan görevler sayfası
-          '/calendar': (context) => CalendarScreen(), // Takvim sayfası
-          '/login': (context) => LoginScreen(), // Giriş ekranı sayfası
-          '/emailLogin': (context) => EmailLoginScreen(), // E-posta ile giriş ekranı
-          '/register': (context) => RegisterScreen(), // Kayıt ekranı
+          '/taskList': (context) => const TaskListScreen(),
+          '/profile': (context) => const ProfileScreen(),
+          '/main': (context) => const MainScreen(), // Ana sayfa için rota
+          '/reminder': (context) => const ReminderScreen(), // Hatırlatıcı sayfası
+          '/completedTasks': (context) => const CompletedTasksScreen(), // Tamamlanan görevler sayfası
+          '/calendar': (context) => const CalendarScreen(), // Takvim sayfası
+          '/login': (context) => const LoginScreen(), // Giriş ekranı sayfası
+          '/emailLogin': (context) => const EmailLoginScreen(), // E-posta ile giriş ekranı
+          '/register': (context) => const RegisterScreen(), // Kayıt ekranı
+          '/addTask': (context) => const AddTaskScreen(), // Görev ekleme sayfası
         },
       ),
     ),

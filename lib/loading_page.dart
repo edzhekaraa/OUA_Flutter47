@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 
 class LoadingPage extends StatelessWidget {
+  const LoadingPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,27 +17,27 @@ class LoadingPage extends StatelessWidget {
               width: 100,
               height: 100,
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             // Uygulama adı
-            Text(
+            const Text(
               'Görev Yönetim Uygulaması',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             // Giriş yap butonu
             ElevatedButton(
               onPressed: () {
                 Navigator.pushReplacementNamed(context, '/login');
               },
-              child: Text('Giriş Yap'),
+              child: const Text('Giriş Yap'),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             // Kayıt ol butonu
             TextButton(
               onPressed: () {
                 Navigator.pushReplacementNamed(context, '/register');
               },
-              child: Text('Kayıt Ol'),
+              child: const Text('Kayıt Ol'),
             ),
           ],
         ),

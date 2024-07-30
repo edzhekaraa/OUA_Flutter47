@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF7f39fb), // Arka plan rengi
+      backgroundColor: const Color(0xFF7f39fb), // Arka plan rengi
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -20,7 +22,7 @@ class LoginScreen extends StatelessWidget {
                     height: 360, // Logo yüksekliği
                     fit: BoxFit.contain, // Logo bozulmadan fit etme
                   ),
-                  SizedBox(height: 40), // Logo ile butonlar arasındaki boşluk
+                  const SizedBox(height: 40), // Logo ile butonlar arasındaki boşluk
 
                   // Giriş Yap butonu
                   Padding(
@@ -32,13 +34,13 @@ class LoginScreen extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12), // Yumuşak köşeler
                         ),
-                        padding: EdgeInsets.symmetric(vertical: 15), // Buton yüksekliği
-                        minimumSize: Size(double.infinity, 50), // Buton genişliği
+                        padding: const EdgeInsets.symmetric(vertical: 15), // Buton yüksekliği
+                        minimumSize: const Size(double.infinity, 50), // Buton genişliği
                       ),
                       onPressed: () {
                         Navigator.of(context).pushReplacementNamed('/emailLogin'); // Email login ekranına yönlendir
                       },
-                      child: Text('Giriş Yap', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                      child: const Text('Giriş Yap', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                     ),
                   ),
                   
@@ -52,13 +54,13 @@ class LoginScreen extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12), // Yumuşak köşeler
                         ),
-                        padding: EdgeInsets.symmetric(vertical: 15), // Buton yüksekliği
-                        minimumSize: Size(double.infinity, 50), // Buton genişliği
+                        padding: const EdgeInsets.symmetric(vertical: 15), // Buton yüksekliği
+                        minimumSize: const Size(double.infinity, 50), // Buton genişliği
                       ),
                       onPressed: () {
                         Navigator.of(context).pushNamed('/register'); // Kayıt ol ekranına yönlendir
                       },
-                      child: Text('Kayıt Ol', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                      child: const Text('Kayıt Ol', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                     ),
                   ),
                 ],

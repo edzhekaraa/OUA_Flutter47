@@ -1,24 +1,17 @@
 import 'package:flutter/material.dart';
-import 'task.dart';
 
-class TaskProvider with ChangeNotifier {
-  List<Task> _tasks = [];
+class TaskProvider extends ChangeNotifier {
+  final List<Map<String, dynamic>> _tasks = [];
 
-  List<Task> get tasks => _tasks;
+  List<Map<String, dynamic>> get tasks => _tasks;
 
-  void addTask(Task task) {
+  void addTask(Map<String, dynamic> task) {
     _tasks.add(task);
     notifyListeners();
   }
 
-  void updateTask(Task task) {
-    int index = _tasks.indexWhere((t) => t.id == task.id);
-    _tasks[index] = task;
-    notifyListeners();
-  }
-
-  void deleteTask(int id) {
-    _tasks.removeWhere((t) => t.id == id);
+  void removeTask(int index) {
+    _tasks.removeAt(index);
     notifyListeners();
   }
 }
