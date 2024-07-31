@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'task_provider.dart'; // TaskProvider'ı ekleyin
+import 'task_provider.dart';
 
 class TaskListScreen extends StatefulWidget {
   const TaskListScreen({super.key});
@@ -64,37 +64,52 @@ class _TaskListScreenState extends State<TaskListScreen> {
                     final task = taskProvider.tasks[index];
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(
-                            context,
-                            '/taskDetail',
-                            arguments: {'task': task, 'index': index},
-                          );
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.grey[200],
-                            borderRadius: BorderRadius.circular(12),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.1),
-                                spreadRadius: 2,
-                                blurRadius: 4,
-                                offset: const Offset(0, 3),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(12),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.1),
+                              spreadRadius: 2,
+                              blurRadius: 4,
+                              offset: const Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        child: ListTile(
+                          contentPadding: const EdgeInsets.symmetric(horizontal: 16),
+                          title: Text(
+                            task['title'],
+                            style: const TextStyle(
+                              color: Colors.purple,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          trailing: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              IconButton(
+                                icon: const Icon(Icons.cancel, color: Colors.red),
+                                onPressed: () {
+                                  taskProvider.removeTask(index);
+                                },
+                              ),
+                              IconButton(
+                                icon: const Icon(Icons.check, color: Colors.green),
+                                onPressed: () {
+                                  taskProvider.completeTask(index);
+                                },
                               ),
                             ],
                           ),
-                          child: ListTile(
-                            contentPadding: const EdgeInsets.symmetric(horizontal: 16),
-                            title: Text(
-                              task['title'],
-                              style: const TextStyle(
-                                color: Colors.purple,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
+                          onTap: () {
+                            Navigator.pushNamed(
+                              context,
+                              '/taskDetail',
+                              arguments: {'task': task, 'index': index},
+                            );
+                          },
                         ),
                       ),
                     );
