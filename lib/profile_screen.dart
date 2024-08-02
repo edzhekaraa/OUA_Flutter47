@@ -1,18 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io'; // Import this library for the File class
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
-  Future<void> _saveName(String name) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('user_name', name);
+  @override
+  _ProfileScreenState createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  String? _profileImagePath;
+
+  Future<void> _pickImage() async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? image = await picker.pickImage(source: ImageSource.gallery);
+
+    if (image != null) {
+      setState(() {
+        _profileImagePath = image.path;
+      });
+      // Save the selected image path using SharedPreferences or any other method
+    }
+  }
+
+  void _logout(BuildContext context) {
+    // Navigate to the login screen
+    Navigator.pushReplacementNamed(context, '/login');
   }
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController nameController = TextEditingController();
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Profil'),
@@ -20,18 +38,28 @@ class ProfileScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            TextField(
-              controller: nameController,
-              decoration: const InputDecoration(labelText: 'İsminizi girin'),
+            Column(
+              children: [
+                // Profile photo
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage: _profileImagePath != null
+                      ? FileImage(File(_profileImagePath!))
+                      : const AssetImage('assets/profile.png') as ImageProvider,
+                ),
+                const SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: _pickImage,
+                  child: const Text('Profil Fotoğrafını Değiştir'),
+                ),
+              ],
             ),
-            const SizedBox(height: 20),
+            // Logout button at the bottom center
             ElevatedButton(
-              onPressed: () {
-                _saveName(nameController.text);
-                Navigator.pop(context);
-              },
-              child: const Text('Kaydet'),
+              onPressed: () => _logout(context),
+              child: const Text('Çıkış Yap'),
             ),
           ],
         ),
