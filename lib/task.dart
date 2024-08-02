@@ -22,4 +22,14 @@ class Task {
       'isCompleted': isCompleted ? 1 : 0,
     };
   }
+
+  static Task fromMap(Map<String, dynamic> map) {
+    return Task(
+      id: map['id'],
+      title: map['title'],
+      description: map['description'],
+      dateTime: DateTime.parse(map['dateTime']),
+      isCompleted: map['isCompleted'] == 1,
+    );
+  }
 }
