@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-
 class AddTaskScreen extends StatefulWidget {
   const AddTaskScreen({super.key});
 
@@ -53,9 +52,11 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
             ElevatedButton(
               onPressed: () {
                 final task = {
+                  'id': DateTime.now().millisecondsSinceEpoch, // Örnek ID
                   'title': _titleController.text,
                   'description': _descriptionController.text,
-                  'dueDate': _dueDate?.toIso8601String(),
+                  'dateTime': _dueDate?.toIso8601String(),
+                  'isCompleted': false,
                 };
                 Navigator.pop(context, task); // Görev ile birlikte geri dön
               },
