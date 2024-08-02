@@ -1,117 +1,67 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
-class AddTaskScreen extends StatelessWidget {
+
+class AddTaskScreen extends StatefulWidget {
+  const AddTaskScreen({super.key});
+
+  @override
+  _AddTaskScreenState createState() => _AddTaskScreenState();
+}
+
+class _AddTaskScreenState extends State<AddTaskScreen> {
+  final _titleController = TextEditingController();
+  final _descriptionController = TextEditingController();
+  DateTime? _dueDate;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          // Sol üst köşede geri butonu ve sağ üst köşede profil butonu
-          Container(
-            padding: const EdgeInsets.only(top: 40, left: 16, right: 16),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                  icon: Image.asset(
-                    'assets/back_button.png', // Geri butonu PNG dosyanız
-                    width: 24, // Buton simgesi genişliği
-                    height: 24, // Buton simgesi yüksekliği
-                  ),
-                  onPressed: () {
-                    Navigator.pop(context); // Geri gitmek için
-                  },
-                ),
-                IconButton(
-                  icon: Image.asset(
-                    'assets/profile.png', // Profil butonu PNG dosyanız
-                    width: 24, // Buton simgesi genişliği
-                    height: 24, // Buton simgesi yüksekliği
-                  ),
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/profile'); // Profil sayfasına gitmek için
-                  },
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 20),
-          // Ortada GÖREV EKLE yazılı gri kutu
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 20),
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: Colors.grey[200], // Gri arka plan
-              borderRadius: BorderRadius.circular(12), // Yuvarlak köşeler
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
-                  spreadRadius: 2,
-                  blurRadius: 4,
-                  offset: Offset(0, 3), // Kutu gölgesi
-                ),
-              ],
-            ),
-            child: Center(
-              child: Text(
-                'GÖREV EKLE',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.purple, // Mor renk
-                ),
-              ),
-            ),
-          ),
-          SizedBox(height: 20),
-          // Hazır görev kutuları
-          Expanded(
-            child: ListView(
-              padding: EdgeInsets.all(20),
-              children: [
-                taskOption('Egzersiz yap'),
-                taskOption('Çalış'),
-                taskOption('Su iç'),
-                taskOption('Toplantı'),
-                taskOption('Sağlıklı beslen'),
-                taskOption('Özelleştirmek isteyen için görev ekle'),
-              ],
-            ),
-          ),
-        ],
+      appBar: AppBar(
+        title: const Text('Görev Ekle'),
+        centerTitle: true,
       ),
-    );
-  }
-
-  Widget taskOption(String task) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.grey[200], // Gri arka plan
-          borderRadius: BorderRadius.circular(12), // Yuvarlak köşeler
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              spreadRadius: 2,
-              blurRadius: 4,
-              offset: Offset(0, 3), // Kutu gölgesi
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            TextField(
+              controller: _titleController,
+              decoration: const InputDecoration(labelText: 'Başlık'),
+            ),
+            TextField(
+              controller: _descriptionController,
+              decoration: const InputDecoration(labelText: 'Açıklama'),
+            ),
+            TextButton(
+              onPressed: () async {
+                final selectedDate = await showDatePicker(
+                  context: context,
+                  initialDate: DateTime.now(),
+                  firstDate: DateTime(2000),
+                  lastDate: DateTime(2100),
+                );
+                setState(() {
+                  _dueDate = selectedDate;
+                });
+              },
+              child: Text(_dueDate == null
+                  ? 'Tarih Seç'
+                  : 'Seçilen Tarih: ${DateFormat('dd-MM-yyyy').format(_dueDate!)}'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                final task = {
+                  'title': _titleController.text,
+                  'description': _descriptionController.text,
+                  'dueDate': _dueDate?.toIso8601String(),
+                };
+                Navigator.pop(context, task); // Görev ile birlikte geri dön
+              },
+              child: const Text('Görev Ekle'),
             ),
           ],
-        ),
-        child: ListTile(
-          contentPadding: EdgeInsets.symmetric(horizontal: 16),
-          title: Text(
-            task,
-            style: TextStyle(
-              color: Colors.purple, // Mor renk
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          onTap: () {
-            // Görev seçme işlemi
-          },
         ),
       ),
     );

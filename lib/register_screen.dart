@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF7f39fb), // Arka plan rengi
+      backgroundColor: const Color(0xFF7f39fb), // Arka plan rengi
       appBar: AppBar(
-        backgroundColor: Color(0xFF7f39fb), // AppBar arka plan rengi
+        backgroundColor: const Color(0xFF7f39fb), // AppBar arka plan rengi
         leading: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back, // Beyaz ok simgesi
             color: Colors.white, // Simge rengi beyaz
             size: 30, // Simge boyutu (daha büyük)
@@ -35,7 +37,7 @@ class RegisterScreen extends StatelessWidget {
                     width: 260, // Logo genişliği
                     fit: BoxFit.contain, // Logo bozulmadan fit etme
                   ),
-                  SizedBox(height: 40), // Logo ile form arasındaki boşluk
+                  const SizedBox(height: 40), // Logo ile form arasındaki boşluk
 
                   // İsim giriş alanı
                   TextField(
@@ -50,11 +52,11 @@ class RegisterScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12),
                         borderSide: BorderSide.none,
                       ),
-                      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 15),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
                     ),
-                    style: TextStyle(color: Colors.black), // Kullanıcı metin yazarken
+                    style: const TextStyle(color: Colors.black), // Kullanıcı metin yazarken
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Email giriş alanı
                   TextField(
@@ -69,11 +71,11 @@ class RegisterScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12),
                         borderSide: BorderSide.none,
                       ),
-                      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 15),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
                     ),
-                    style: TextStyle(color: Colors.black), // Kullanıcı metin yazarken
+                    style: const TextStyle(color: Colors.black), // Kullanıcı metin yazarken
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Şifre giriş alanı
                   TextField(
@@ -89,11 +91,11 @@ class RegisterScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12),
                         borderSide: BorderSide.none,
                       ),
-                      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 15),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
                     ),
-                    style: TextStyle(color: Colors.black), // Kullanıcı metin yazarken
+                    style: const TextStyle(color: Colors.black), // Kullanıcı metin yazarken
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Şifre tekrar giriş alanı
                   TextField(
@@ -109,11 +111,11 @@ class RegisterScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12),
                         borderSide: BorderSide.none,
                       ),
-                      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 15),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
                     ),
-                    style: TextStyle(color: Colors.black), // Kullanıcı metin yazarken
+                    style: const TextStyle(color: Colors.black), // Kullanıcı metin yazarken
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Hesap Oluştur butonu
                   ElevatedButton(
@@ -123,21 +125,21 @@ class RegisterScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12), // Yumuşak köşeler
                       ),
-                      padding: EdgeInsets.symmetric(vertical: 15), // Buton yüksekliği
-                      minimumSize: Size(double.infinity, 50), // Buton genişliği
+                      padding: const EdgeInsets.symmetric(vertical: 15), // Buton yüksekliği
+                      minimumSize: const Size(double.infinity, 50), // Buton genişliği
                     ),
                     onPressed: () {
                       // Hesap Oluştur butonuna tıklama işlemi
                     },
-                    child: Text('Hesap Oluştur', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                    child: const Text('Hesap Oluştur', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Hesabınız var mı? Giriş yap seçeneği
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         'Hesabınız var mı? ',
                         style: TextStyle(color: Colors.white),
                       ),
@@ -145,7 +147,7 @@ class RegisterScreen extends StatelessWidget {
                         onTap: () {
                           Navigator.of(context).pushNamed('/login'); // Giriş yap ekranına yönlendir
                         },
-                        child: Text(
+                        child: const Text(
                           'Giriş Yap',
                           style: TextStyle(
                             color: Colors.white,

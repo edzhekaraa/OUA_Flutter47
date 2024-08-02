@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'task_provider.dart';
 import 'task_list_screen.dart'; // Görevlerim sayfası
 import 'profile_screen.dart'; // Profil sayfası
-import 'add_task_screen.dart'; // Görev ekleme sayfası
 import 'main_screen.dart'; // Ana sayfa
 import 'reminder_screen.dart'; // Hatırlatıcı sayfası
 import 'completed_tasks_screen.dart'; // Tamamlanan görevler sayfası
@@ -12,6 +11,8 @@ import 'login_screen.dart'; // Giriş ekranı sayfası
 import 'email_login_screen.dart'; // E-posta ile giriş ekranı
 import 'register_screen.dart'; // Kayıt ekranı
 import 'splash_screen.dart'; // Splash ekranı
+import 'add_task_screen.dart'; // Görev ekleme sayfası
+import 'task_detail_screen.dart';
 
 void main() {
   runApp(
@@ -22,38 +23,40 @@ void main() {
         title: 'Görev Yönetim Uygulaması',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.purple, // Ana renk şeması
-            primary: Colors.purple, // Ana renk
-            onPrimary: Colors.white, // Ana renk üzerindeki yazı rengi
-            secondary: Colors.deepPurple, // İkincil renk
-            onSecondary: Colors.white, // İkincil renk üzerindeki yazı rengi
+            seedColor: Colors.purple,
+            primary: Colors.purple,
+            onPrimary: Colors.white,
+            secondary: Colors.deepPurple,
+            onSecondary: Colors.white,
           ),
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.white, // Beyaz arka plan
-              foregroundColor: Colors.purple, // Mor yazı rengi
+              backgroundColor: Colors.white,
+              foregroundColor: Colors.purple,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12), // Yumuşak köşeler
+                borderRadius: BorderRadius.circular(12),
               ),
-              padding: const EdgeInsets.symmetric(vertical: 15), // Buton yüksekliği
-              minimumSize: const Size(double.infinity, 50), // Buton genişliği
+              padding: const EdgeInsets.symmetric(vertical: 15),
+              minimumSize: const Size(double.infinity, 50),
             ),
           ),
         ),
-        home: SplashScreen(), // Splash ekranını burada tanımlıyoruz
+        home: const SplashScreen(),
         routes: {
-          '/taskList': (context) => TaskListScreen(),
-          '/profile': (context) => ProfileScreen(),
-          '/addTask': (context) => AddTaskScreen(),
-          '/main': (context) => MainScreen(), // Ana sayfa için rota
-          '/reminder': (context) => ReminderScreen(), // Hatırlatıcı sayfası
-          '/completedTasks': (context) => CompletedTasksScreen(), // Tamamlanan görevler sayfası
-          '/calendar': (context) => CalendarScreen(), // Takvim sayfası
-          '/login': (context) => LoginScreen(), // Giriş ekranı sayfası
-          '/emailLogin': (context) => EmailLoginScreen(), // E-posta ile giriş ekranı
-          '/register': (context) => RegisterScreen(), // Kayıt ekranı
+          '/taskList': (context) => const TaskListScreen(),
+          '/profile': (context) => const ProfileScreen(),
+          '/main': (context) => const MainScreen(),
+          '/reminder': (context) => const ReminderScreen(),
+          '/completedTasks': (context) => const CompletedTasksScreen(),
+          '/calendar': (context) => const CalendarScreen(),
+          '/login': (context) => const LoginScreen(),
+          '/emailLogin': (context) => const EmailLoginScreen(),
+          '/register': (context) => const RegisterScreen(),
+          '/addTask': (context) => const AddTaskScreen(),
+          '/taskDetail': (context) => const TaskDetailScreen(), // Add this line
         },
       ),
     ),
   );
 }
+

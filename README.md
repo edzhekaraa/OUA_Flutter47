@@ -238,3 +238,116 @@ Notlar kısmı üçüncü sprinte ertelendi."
   </details>
 
 </details>
+
+
+
+<details>
+    <summary><h1>Sprint 3</h1></summary>
+
+
+<details>
+    <summary><h3>Sprint 3 - App Screenshots</h3></summary>
+  <table style="width: 100%;">
+    <tr>
+      <td colspan="4" style="text-align: center;"><h2>Açılış Sayfaları</h2></td>
+    </tr>
+    <tr>
+      <td style="width: 25%;"><img src="bootcampFiles/sprintThree/screenshots/Acilis.png" style="max-width: 100%; height: auto;"></td>
+      <td style="width: 25%;"><img src="bootcampFiles/sprintThree/screenshots/Acilis 2.png" style="max-width: 100%; height: auto;"></td>
+    </tr>
+    <tr>
+      <td colspan="4" style="text-align: center;"><h2>Hesap Oluşturma Sayfası</h2></td>
+    </tr>
+    <tr>
+      <td style="width: 25%;"><img src="bootcampFiles/sprintThree/screenshots/Hesap Olustur.png" style="max-width: 100%; height: auto;"></td>
+    </tr>
+      <tr>
+      <td colspan="4" style="text-align: center;"><h2>Uygulamaya Giriş Sayfası</h2></td>
+    </tr>
+    <tr>
+      <td style="width: 25%;"><img src="bootcampFiles/sprintThree/screenshots/Giris Yap.png" style="max-width: 100%; height: auto;"></td>
+    </tr>
+      <tr>
+      <td colspan="4" style="text-align: center;"><h2>Anasayfa</h2></td>
+    </tr>
+    <tr>
+      <td style="width: 25%;"><img src="bootcampFiles/sprintThree/screenshots/Anasayfa.png" style="max-width: 100%; height: auto;"></td>
+    </tr>
+    <tr>
+      <td colspan="4" style="text-align: center;"><h2>Profil ve Profil Düzenleme Sayfaları</h2></td>
+    </tr>
+    <tr>
+      <td style="width: 25%;"><img src="bootcampFiles/sprintThree/screenshots/Profilim.png" style="max-width: 100%; height: auto;"></td>
+    </tr>
+    <tr>
+      <td style="width: 25%;"><img src="bootcampFiles/sprintThree/screenshots/ProfilDuzenle.png" style="max-width: 100%; height: auto;"></td>
+    </tr>
+    <tr>
+      <td colspan="4" style="text-align: center;"><h2>Görevler ve Görev Ekleme Sayfaları</h2></td>
+    </tr>
+    <tr>
+      <td style="width: 25%;"><img src="bootcampFiles/sprintThree/screenshots/Gorevlerim.png" style="max-width: 100%; height: auto;"></td>
+    </tr>
+    <tr>
+      <td style="width: 25%;"><img src="bootcampFiles/sprintThree/screenshots/Gorev Ekle.png" style="max-width: 100%; height: auto;"></td>
+    </tr>
+    <tr>
+      <td colspan="4" style="text-align: center;"><h2>Tamamlanan Görevler Sayfası</h2></td>
+    </tr>
+    <tr>
+      <td style="width: 25%;"><img src="bootcampFiles/sprintThree/screenshots/Tamamlanan.png" style="max-width: 100%; height: auto;"></td>
+    </tr>
+    <tr>
+      <td colspan="4" style="text-align: center;"><h2>Takvim</h2></td>
+    </tr>
+    <tr>
+      <td style="width: 25%;"><img src="bootcampFiles/sprintThree/screenshots/Takvim 1.png" style="max-width: 100%; height: auto;"></td>
+    </tr>
+    <tr>
+      <td style="width: 25%;"><img src="bootcampFiles/sprintThree/screenshots/Takvim 2.png" style="max-width: 100%; height: auto;"></td>
+    </tr>
+    <tr>
+      <td colspan="4" style="text-align: center;"><h2>Hatırlatıcı</h2></td>
+    </tr>
+    <tr>
+      <td style="width: 25%;"><img src="bootcampFiles/sprintThree/screenshots/Hatirlatici 1.png" style="max-width: 100%; height: auto;"></td>
+    </tr>
+    <tr>
+      <td style="width: 25%;"><img src="bootcampFiles/sprintThree/screenshots/Hatirlatici 2.png" style="max-width: 100%; height: auto;"></td>
+    </tr>
+    
+    
+  </table>
+
+    
+  </details>   
+
+  <details>
+    <summary><h3>Sprint 3 - Sprint Board Update Screenshots</h3></summary>
+    <img src="bootcampFiles/sprintThree/boardupdate/1.jpeg" style="max-width: 100%; height: auto;">
+    <img src="bootcampFiles/sprintThree/boardupdate/2.jpeg" style="max-width: 100%; height: auto;">
+  </details>
+
+  <details>
+    <summary><h3>Sprint 3 - Proje Takip Aracı</h3></summary>
+    <img src="bootcampFiles/sprintThree/proje_takip/1.png" style="max-width: 100%; height: auto;">
+    <img src="bootcampFiles/sprintThree/proje_takip/2.png" style="max-width: 100%; height: auto;">
+  </details>
+  
+
+
+  - **Sprint Notes**:
+    Üçüncü sprintte uygulamaya son tasarımlar eklenerek tasarım  aşaması tamamlandı Front-end kısmında profil sayfası ve son düzenlemeler yapılarak tamamlandı. Back-end kısmına daha çok yoğunlaşıldı.                                     Telefon test aşamasından sonra uygulamanın tanıtım videosu hazırlanmaya başlandı.En son sprint notları githuba eklendi.
+
+  - **Sprint içinde beklenen puan tamamlama**: Üçüncü Sprint için 300 puan beklenmektedir.  Ekip üyeleri uyumlu ve başarılı bir şekilde çalışmıştır.
+  - **Puan Tamamlama Mantığı**: `(300 points completed)` Kod yazma, tasarım, ekip uyumu, hedeflerin tamamlanma yüzdesi ve zamanı doğru yönetebilme ölçütlerine göre puan değerlendirmesi yapıldı. Son sprint olması ve tamamlanma aşaması olduğu için kontrol süreside dahil edilerek bu sprintten beklenen puan önceki sprintlere oranla yüksek tutuldu.
+  - **Daily Scrum**: Proje takibinde google sheet ve grup sohbetlerinden iletişime devam edildi. Projeye hedef dışı ekleme yapılmadı. Ekip içerisinde etkili iletişim sağlandı. Kalan proje görevler belirlenen hedefler doğrultusunda ve ekip bireylerinin yoğunluk durumlarına göre paylaşılarak ve destekle tamamlandı.  
+  - **Product Backlog URL:** 
+  - **Sprint Review:**
+    Ekip üyeleri ürün değerlendirme sürecinde katılım sağladılar. Eksiklikler değerlendirildi düzeltilmesi gerekenler belirlendi.
+
+  - **Sprint Review Participants:** Beyza Yaylak, Ece  Kara, Berkay Pekersoy, Bora Baştürk, Beyzanur Kuzhan 
+  - **Sprint Retrospective:**
+    Ekip güzel bir şekilde çalıştı. Eğer ön değerlendirmeyi projemiz geçerse sonraki aşamadaki sunum dosyası hazırlaması üzerine konuşuldu.
+
+</details>

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ReminderScreen extends StatefulWidget {
+  const ReminderScreen({super.key});
+
   @override
   _ReminderScreenState createState() => _ReminderScreenState();
 }
@@ -55,7 +57,7 @@ class _ReminderScreenState extends State<ReminderScreen> {
               ],
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           // Alarm zamanı seçimi
           Center(
             child: Padding(
@@ -63,19 +65,19 @@ class _ReminderScreenState extends State<ReminderScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Alarm Zamanı:',
                     style: TextStyle(fontSize: 24),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Text(
-                    '${_selectedTime.format(context)}',
-                    style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
+                    _selectedTime.format(context),
+                    style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: _selectTime,
-                    child: Text('Zaman Seç'),
+                    child: const Text('Zaman Seç'),
                   ),
                 ],
               ),
