@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'task_provider.dart';
 
 class CompletedTasksScreen extends StatelessWidget {
   const CompletedTasksScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Eğer görevleri geçici olarak saklamak istiyorsanız, Provider gibi bir state yönetim çözümü kullanabilirsiniz.
-    final List<Map<String, dynamic>> completedTasks = ModalRoute.of(context)!.settings.arguments as List<Map<String, dynamic>>? ?? [];
-
+    final taskProvider = Provider.of<TaskProvider>(context);
+    
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // Sol üst köşede geri butonu ve sağ üst köşede profil butonu
           Container(
             padding: const EdgeInsets.only(top: 40, left: 16, right: 16),
             child: Row(
@@ -20,22 +20,22 @@ class CompletedTasksScreen extends StatelessWidget {
               children: [
                 IconButton(
                   icon: Image.asset(
-                    'assets/back_button.png', // Geri butonu PNG dosyanız
-                    width: 24, // Buton simgesi genişliği
-                    height: 24, // Buton simgesi yüksekliği
+                    'assets/back_button.png',
+                    width: 24,
+                    height: 24,
                   ),
                   onPressed: () {
-                    Navigator.pop(context); // Geri gitmek için
+                    Navigator.pop(context);
                   },
                 ),
                 IconButton(
                   icon: Image.asset(
-                    'assets/profile.png', // Profil butonu PNG dosyanız
-                    width: 24, // Buton simgesi genişliği
-                    height: 24, // Buton simgesi yüksekliği
+                    'assets/profile.png',
+                    width: 24,
+                    height: 24,
                   ),
                   onPressed: () {
-                    Navigator.pushNamed(context, '/profile'); // Profil sayfasına gitmek için
+                    Navigator.pushNamed(context, '/profile');
                   },
                 ),
               ],
@@ -45,14 +45,14 @@ class CompletedTasksScreen extends StatelessWidget {
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.all(20),
-              itemCount: completedTasks.length,
+              itemCount: taskProvider.completedTasks.length,
               itemBuilder: (context, index) {
-                final task = completedTasks[index];
+                final task = taskProvider.completedTasks[index];
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.green[200], // Tamamlanan görev için yeşil kutu
+                      color: Colors.green[200],
                       borderRadius: BorderRadius.circular(12),
                       boxShadow: [
                         BoxShadow(
@@ -66,11 +66,15 @@ class CompletedTasksScreen extends StatelessWidget {
                     child: ListTile(
                       contentPadding: const EdgeInsets.symmetric(horizontal: 16),
                       title: Text(
-                        task['title'],
+                        task.title,
                         style: const TextStyle(
                           color: Colors.green,
                           fontWeight: FontWeight.bold,
                         ),
+                      ),
+                      subtitle: Text(
+                        task.description,
+                        style: const TextStyle(color: Colors.black),
                       ),
                     ),
                   ),
