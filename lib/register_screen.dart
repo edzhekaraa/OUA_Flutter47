@@ -1,165 +1,171 @@
 import 'package:flutter/material.dart';
 
-class RegisterScreen extends StatelessWidget {
+class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
+
+  @override
+  _RegisterScreenState createState() => _RegisterScreenState();
+}
+
+class _RegisterScreenState extends State<RegisterScreen> {
+  final _nameController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF7f39fb), // Arka plan rengi
+      backgroundColor: const Color(0xFF7f39fb),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF7f39fb), // AppBar arka plan rengi
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back, // Beyaz ok simgesi
-            color: Colors.white, // Simge rengi beyaz
-            size: 30, // Simge boyutu (daha büyük)
-          ),
-          onPressed: () {
-            Navigator.of(context).pop(); // Önceki ekrana dön
-          },
-        ),
-        elevation: 0, // AppBar gölgesini kaldır
+        backgroundColor: const Color(0xFF7f39fb),
+        elevation: 0,
+        title: const Text('Kayıt Ol', style: TextStyle(color: Colors.white)),
+        centerTitle: true,
       ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  // Orta üst kısımda logo
-                  Image.asset(
-                    'assets/loadingscreen.png', // Burada logo dosyanızın yolu
-                    height: 260, // Logo yüksekliği
-                    width: 260, // Logo genişliği
-                    fit: BoxFit.contain, // Logo bozulmadan fit etme
-                  ),
-                  const SizedBox(height: 40), // Logo ile form arasındaki boşluk
-
-                  // İsim giriş alanı
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: 'İsim', // Placeholder metin
-                      hintStyle: TextStyle(
-                        color: Colors.black.withOpacity(0.6), // Soluk siyah renk
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Logo
+              Image.asset(
+                'assets/loadingscreen.png', // Logo'nuzun yolu
+                height: 100, // Yüksekliği ayarlayın
+              ),
+              const SizedBox(height: 32),
+              Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    TextFormField(
+                      controller: _nameController,
+                      decoration: const InputDecoration(
+                        hintText: 'İsim',
+                        hintStyle: TextStyle(color: Colors.grey), // Gri placeholder metni
+                        border: OutlineInputBorder(),
+                        fillColor: Colors.white,
+                        filled: true,
                       ),
-                      filled: true,
-                      fillColor: Colors.white,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide.none,
-                      ),
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'İsminizi girin';
+                        }
+                        return null;
+                      },
                     ),
-                    style: const TextStyle(color: Colors.black), // Kullanıcı metin yazarken
-                  ),
-                  const SizedBox(height: 20),
-
-                  // Email giriş alanı
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: 'E-posta', // Placeholder metin
-                      hintStyle: TextStyle(
-                        color: Colors.black.withOpacity(0.6), // Soluk siyah renk
+                    const SizedBox(height: 16),
+                    TextFormField(
+                      controller: _emailController,
+                      decoration: const InputDecoration(
+                        hintText: 'E-posta',
+                        hintStyle: TextStyle(color: Colors.grey), // Gri placeholder metni
+                        border: OutlineInputBorder(),
+                        fillColor: Colors.white,
+                        filled: true,
                       ),
-                      filled: true,
-                      fillColor: Colors.white,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide.none,
-                      ),
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
+                      keyboardType: TextInputType.emailAddress,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'E-posta adresinizi girin';
+                        }
+                        return null;
+                      },
                     ),
-                    style: const TextStyle(color: Colors.black), // Kullanıcı metin yazarken
-                  ),
-                  const SizedBox(height: 20),
-
-                  // Şifre giriş alanı
-                  TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      hintText: 'Şifre', // Placeholder metin
-                      hintStyle: TextStyle(
-                        color: Colors.black.withOpacity(0.6), // Soluk siyah renk
+                    const SizedBox(height: 16),
+                    TextFormField(
+                      controller: _passwordController,
+                      decoration: const InputDecoration(
+                        hintText: 'Şifre',
+                        hintStyle: TextStyle(color: Colors.grey), // Gri placeholder metni
+                        border: OutlineInputBorder(),
+                        fillColor: Colors.white,
+                        filled: true,
                       ),
-                      filled: true,
-                      fillColor: Colors.white,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide.none,
-                      ),
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
+                      obscureText: true,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Şifrenizi girin';
+                        }
+                        return null;
+                      },
                     ),
-                    style: const TextStyle(color: Colors.black), // Kullanıcı metin yazarken
-                  ),
-                  const SizedBox(height: 20),
-
-                  // Şifre tekrar giriş alanı
-                  TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      hintText: 'Şifre Tekrar', // Placeholder metin
-                      hintStyle: TextStyle(
-                        color: Colors.black.withOpacity(0.6), // Soluk siyah renk
+                    const SizedBox(height: 16),
+                    TextFormField(
+                      controller: _confirmPasswordController,
+                      decoration: const InputDecoration(
+                        hintText: 'Şifreyi Onayla',
+                        hintStyle: TextStyle(color: Colors.grey), // Gri placeholder metni
+                        border: OutlineInputBorder(),
+                        fillColor: Colors.white,
+                        filled: true,
                       ),
-                      filled: true,
-                      fillColor: Colors.white,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide.none,
-                      ),
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
+                      obscureText: true,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Şifreyi onaylayın';
+                        }
+                        if (value != _passwordController.text) {
+                          return 'Şifreler eşleşmiyor';
+                        }
+                        return null;
+                      },
                     ),
-                    style: const TextStyle(color: Colors.black), // Kullanıcı metin yazarken
-                  ),
-                  const SizedBox(height: 20),
-
-                  // Hesap Oluştur butonu
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black, // Siyah arka plan
-                      foregroundColor: Colors.white, // Beyaz yazı rengi
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12), // Yumuşak köşeler
-                      ),
-                      padding: const EdgeInsets.symmetric(vertical: 15), // Buton yüksekliği
-                      minimumSize: const Size(double.infinity, 50), // Buton genişliği
-                    ),
-                    onPressed: () {
-                      // Hesap Oluştur butonuna tıklama işlemi
-                    },
-                    child: const Text('Hesap Oluştur', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                  ),
-                  const SizedBox(height: 20),
-
-                  // Hesabınız var mı? Giriş yap seçeneği
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        'Hesabınız var mı? ',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).pushNamed('/login'); // Giriş yap ekranına yönlendir
-                        },
-                        child: const Text(
-                          'Giriş Yap',
-                          style: TextStyle(
-                            color: Colors.white,
-                            decoration: TextDecoration.underline, // Altı çizili
+                    const SizedBox(height: 24),
+                    ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor: WidgetStateProperty.all<Color>(Colors.black),
+                        foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
+                        padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
+                          const EdgeInsets.symmetric(vertical: 15),
+                        ),
+                        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
                           ),
                         ),
+                        minimumSize: WidgetStateProperty.all<Size>(
+                          const Size(double.infinity, 50),
+                        ),
                       ),
-                    ],
-                  ),
-                ],
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          // Kayıt işlemi
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Kayıt başarılı')),
+                          );
+                        }
+                      },
+                      child: const Text('Kayıt Ol', style: TextStyle(fontSize: 18)),
+                    ),
+                    const SizedBox(height: 24),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'Hesabınız var mı? ',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pop(); // Geri dönerek giriş ekranına dön
+                          },
+                          child: const Text(
+                            'Giriş Yap',
+                            style: TextStyle(
+                              color: Colors.white,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
+            ],
           ),
         ),
       ),
