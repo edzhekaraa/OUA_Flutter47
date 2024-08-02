@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'task_provider.dart'; // TaskProvider'ı ekleyin
+import 'task_provider.dart';
+import 'task.dart';
 
 class TaskListScreen extends StatefulWidget {
   const TaskListScreen({super.key});
@@ -64,37 +65,58 @@ class _TaskListScreenState extends State<TaskListScreen> {
                     final task = taskProvider.tasks[index];
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(
-                            context,
-                            '/taskDetail',
-                            arguments: {'task': task, 'index': index},
-                          );
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.grey[200],
-                            borderRadius: BorderRadius.circular(12),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.1),
-                                spreadRadius: 2,
-                                blurRadius: 4,
-                                offset: const Offset(0, 3),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(12),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.1),
+                              spreadRadius: 2,
+                              blurRadius: 4,
+                              offset: const Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        child: ListTile(
+                          contentPadding: const EdgeInsets.symmetric(horizontal: 16),
+                          title: Text(
+                            task.title,
+                            style: const TextStyle(
+                              color: Colors.purple,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: Text(
+                            task.description,
+                            style: const TextStyle(
+                              color: Colors.black,
+                            ),
+                          ),
+                          trailing: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              IconButton(
+                                icon: const Icon(Icons.delete, color: Colors.red),
+                                onPressed: () {
+                                  taskProvider.removeTask(index);
+                                },
+                              ),
+                              IconButton(
+                                icon: const Icon(Icons.check, color: Colors.green),
+                                onPressed: () {
+                                  taskProvider.completeTask(index);
+                                },
                               ),
                             ],
                           ),
-                          child: ListTile(
-                            contentPadding: const EdgeInsets.symmetric(horizontal: 16),
-                            title: Text(
-                              task['title'],
-                              style: const TextStyle(
-                                color: Colors.purple,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
+                          onTap: () {
+                            Navigator.pushNamed(
+                              context,
+                              '/taskDetail',
+                              arguments: {'task': task, 'index': index},
+                            );
+                          },
                         ),
                       ),
                     );
@@ -108,9 +130,10 @@ class _TaskListScreenState extends State<TaskListScreen> {
             left: MediaQuery.of(context).size.width * 0.5 - 28,
             child: FloatingActionButton(
               onPressed: () async {
-                final newTask = await Navigator.pushNamed(context, '/addTask');
-                if (newTask != null) {
-                  taskProvider.addTask(newTask as Map<String, dynamic>);
+                final newTaskMap = await Navigator.pushNamed(context, '/addTask');
+                if (newTaskMap != null) {
+                  final newTask = Task.fromMap(newTaskMap as Map<String, dynamic>);
+                  taskProvider.addTask(newTask); // Burada newTask bir Task nesnesi olmalı
                 }
               },
               child: const Icon(Icons.add),
